@@ -75,7 +75,15 @@ namespace Custom.DatePickerTest
         private static Task NavigateToFirstViewModelAsync()
         {
             var hostScreen = Locator.Current.GetService<IScreen>();
-            hostScreen.Router.NavigateAndReset.Execute(Locator.Current.GetService<IRoutableViewModel>(nameof(ListChargingScheduleViewModel))).Subscribe().Dispose();
+            try
+            {
+                hostScreen.Router.NavigateAndReset.Execute(Locator.Current.GetService<IRoutableViewModel>(nameof(ListChargingScheduleViewModel))).Subscribe().Dispose();
+            }
+            catch (Exception e)
+            {
+                System.Console.WriteLine(e.StackTrace);
+            }
+
             return Task.CompletedTask;
         }
     }

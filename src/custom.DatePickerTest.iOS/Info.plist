@@ -23,7 +23,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Dcbel</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ossiaco.Custom.DatePickerTest.ios</string>
+	<string>com.ossiaco.Custom.DatePickerTest.iOS</string>
 	<key>CFBundleName</key>
 	<string>Custom.DatePickerTest.iOS</string>
 	<key>CFBundleShortVersionString</key>

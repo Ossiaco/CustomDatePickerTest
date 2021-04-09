@@ -7,24 +7,20 @@
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="appsettings.json" />
-    <None Remove="Resources\Fonts\SFProTextRegular.ttf" />
-    <None Remove="Resources\Fonts\SFProTextStrong.ttf" />
-  </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="..\..\..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\clockicon.svg" />
     <EmbeddedResource Include="Resources\Fonts\SFProTextRegular.ttf" />
     <EmbeddedResource Include="Resources\Fonts\SFProTextStrong.ttf" />
+    <EmbeddedResource Include="Resources\clockicon.svg" />
     <EmbeddedResource Include="Resources\range.svg" />
     <EmbeddedResource Include="Resources\recurring.svg" />
+    <EmbeddedResource Include="Resources\arrowleft.svg" />
+    <EmbeddedResource Include="Resources\calendar.svg" />
+    <EmbeddedResource Include="Resources\schedulecalendar.svg" />
+    <EmbeddedResource Include="Resources\alarmicon.svg" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CC.CircularSlider.Forms" Version="1.0.10" />
@@ -72,5 +68,8 @@
 
   <ItemGroup>
     <PackageReference Update="IDisposableAnalyzers" Version="3.4.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\alarmicon.svg" />
   </ItemGroup>
 </Project>

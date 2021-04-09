@@ -62,7 +62,6 @@ namespace Custom.DatePickerTest.iOS.Renderers
         private void CancelButtonAction(object sender, EventArgs eventArgs)
         {
             this.Control.ResignFirstResponder();
-            this.Element.Unfocus();
         }
 
         private void DoneButtonAction(object sender, EventArgs eventArgs)
