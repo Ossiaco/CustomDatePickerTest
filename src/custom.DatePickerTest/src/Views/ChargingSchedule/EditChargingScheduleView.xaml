@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:ViewBase 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resources="clr-namespace:Custom.DatePickerTest.Resx"
+    xmlns:local="clr-namespace:Custom.DatePickerTest.Views"
+    xmlns:control="clr-namespace:Custom.DatePickerTest.Controls"
+    xmlns:vm="clr-namespace:Custom.DatePickerTest.ViewModels.ChargingSchedule"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:svgimage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="Custom.DatePickerTest.Views.ChargingSchedule.EditChargingScheduleView"
+    x:TypeArguments="vm:EditChargingScheduleViewModel"
+    ios:Page.UseSafeArea="True"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <FlexLayout Direction="Column" JustifyContent="Start" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#00000}">
+            <control:TitleBar x:Name="TitleBar" Title="{x:Static resources:AppResources.EVDCCharging}" BackButtonLabelText="{x:Static resources:AppResources.Cancel}"/>
+            <FlexLayout Direction="Row" JustifyContent="Start" AlignItems="Center" FlexLayout.Basis="10%" Margin="10,0">
+                <svgimage:SvgCachedImage Source="resource://Custom.DatePickerTest.Resources.clockicon.svg" WidthRequest="30" FlexLayout.Basis="10%" Margin="0,0,10,0" />
+                <Label Text="{x:Static resources:AppResources.DepartureTime}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="16" TextColor="{AppThemeBinding Light=#5A5E62, Dark=#FFFFFF}" FlexLayout.Basis="40%" />
+                <control:CustomDatePicker x:Name="DepartureDateTimePicker" FontSize="16" Format="MMM d, yyyy hh:mm tt" ios:DatePicker.UpdateMode="WhenFinished" DoneButtonText="{x:Static resources:AppResources.Done}" FlexLayout.Basis="50%" IsVisible="False" />
+                <TimePicker x:Name="DepartureTimePicker" Format="h:mm tt" FontSize="16" ios:TimePicker.UpdateMode="WhenFinished" FlexLayout.Basis="50%" IsVisible="False" />
+            </FlexLayout>
+            <BoxView BackgroundColor="#F5F7FA" HeightRequest="1" Margin="20,0"/>
+            <FlexLayout Direction="Row" JustifyContent="Start" AlignItems="Center" FlexLayout.Basis="10%" Margin="10,0">
+                <svgimage:SvgCachedImage Source="resource://Custom.DatePickerTest.Resources.range.svg" WidthRequest="30" FlexLayout.Basis="10%" Margin="0,0,10,0"/>
+                <Label Text="{x:Static resources:AppResources.EditChargingSchedulePercentNeeded}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="16" TextColor="{AppThemeBinding Light=#5A5E62, Dark=#FFFFFF}" FlexLayout.Basis="50%"/>
+                <Entry x:Name="RangeText" FontSize="16" TextColor="{AppThemeBinding Light=#000000, Dark=#FFFFFF}" FlexLayout.Basis="30%" HorizontalTextAlignment="End"/>
+                <Label Text="%" FontSize="15" TextColor="{AppThemeBinding Light=#5A5E62, Dark=#FFFFFF}" FlexLayout.Basis="10%"/>
+            </FlexLayout>
+            <BoxView BackgroundColor="#F5F7FA" HeightRequest="1" Margin="20,0"/>
+            <Slider x:Name="RangeSlider" Maximum="100" MinimumTrackColor="#323F4B" MaximumTrackColor="Silver" ThumbImageSource="sliderthumb.png" FlexLayout.Basis="10%" Margin="10,0"/>
+            <Label Text="{x:Static resources:AppResources.EditChargingScheduleDescriptionOne}" FontSize="15" TextColor="#777A7F" Margin="10,0" FlexLayout.Basis="10%" />
+            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="Start" FlexLayout.Basis="10%" Margin="10,0">
+                <svgimage:SvgCachedImage Source="resource://Custom.DatePickerTest.Resources.recurring.svg" WidthRequest="30" FlexLayout.Basis="10%" Margin="0,0,10,0"/>
+                <Label Text="{x:Static resources:AppResources.RecurringSchedule}" FontSize="16" TextColor="{AppThemeBinding Light=#5A5E62, Dark=#FFFFFF}" FlexLayout.Basis="70%" />
+                <Switch x:Name="RecuringSwitch" OnColor="#415D77" ThumbColor="White" IsToggled="False" FlexLayout.Basis="20%"/>
+            </FlexLayout>
+            <FlexLayout Direction="Row" FlexLayout.Basis="5%" Margin="10,0">
+                <CollectionView x:Name="RecurringDaysView" SelectionMode="Multiple">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <control:ExtendedFrame BorderWidth="3" HasShadow="False" WidthRequest="30" Padding="10,0" BackgroundColor="Transparent" BorderColor="#415D77">
+                                <control:ExtendedFrame.CornerRadius>
+                                    <OnPlatform x:TypeArguments="x:Single">
+                                        <On Platform="iOS" Value="20"/>
+                                        <On Platform="Android" Value="30"/>
+                                    </OnPlatform>
+                                </control:ExtendedFrame.CornerRadius>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="#415D77" />
+                                                <Setter TargetName="label" Property="Label.TextColor" Value="#FFFFFF"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Label x:Name="label" Text="{Binding}" FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#415D77"/>
+                            </control:ExtendedFrame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </FlexLayout>
+            <Label Text="{x:Static resources:AppResources.EditChargingScheduleDescriptionTwo}" FontSize="15" TextColor="#94989D" VerticalTextAlignment="Center" FlexLayout.Basis="20%" Margin="10,0" />
+            <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="End" FlexLayout.Basis="10%">
+                <FlexLayout Direction="Row" JustifyContent="Center" HeightRequest="48">
+                    <Button x:Name="SaveChargingSchedule" Text="{x:Static resources:AppResources.Save}" TextTransform="None" BackgroundColor="#323F4B" TextColor="White" FlexLayout.Basis="85%" />
+                </FlexLayout>
+            </FlexLayout>
+        </FlexLayout>
+    </ContentPage.Content>
+</local:ViewBase>

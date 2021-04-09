@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="jzh-Ta-FYz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dcbellogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6lr-Dt-64W">
+                                <rect key="frame" x="60" y="281" width="294" height="334"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dcbeltext.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yxn-Mf-32O">
+                                <rect key="frame" x="50" y="811" width="314" height="45"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="enp-42-Zfg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="6lr-Dt-64W" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9Cc-Cs-usX"/>
+                            <constraint firstItem="6lr-Dt-64W" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EeE-Al-mae"/>
+                            <constraint firstItem="6lr-Dt-64W" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="60" id="HmK-Pl-3tt"/>
+                            <constraint firstItem="jzh-Ta-FYz" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="JiP-FH-5p9"/>
+                            <constraint firstItem="Yxn-Mf-32O" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" constant="-40" id="LJ4-11-eHG"/>
+                            <constraint firstItem="Yxn-Mf-32O" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OcD-nG-YCZ"/>
+                            <constraint firstItem="jzh-Ta-FYz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TnJ-CH-jN1"/>
+                            <constraint firstItem="jzh-Ta-FYz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="e8Q-eb-61Q"/>
+                            <constraint firstItem="jzh-Ta-FYz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fbA-OO-bsh"/>
+                            <constraint firstItem="Yxn-Mf-32O" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="rsr-dD-9nu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49.275362318840585" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background.png" width="390" height="844.08001708984375"/>
+        <image name="dcbellogo.png" width="471" height="334"/>
+        <image name="dcbeltext.png" width="203" height="11"/>
+    </resources>
+</document>

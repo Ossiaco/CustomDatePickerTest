@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>$(netstandardVersion)</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Resources\Fonts\SFProTextRegular.ttf" />
+    <None Remove="Resources\Fonts\SFProTextStrong.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\clockicon.svg" />
+    <EmbeddedResource Include="Resources\Fonts\SFProTextRegular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\SFProTextStrong.ttf" />
+    <EmbeddedResource Include="Resources\range.svg" />
+    <EmbeddedResource Include="Resources\recurring.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CC.CircularSlider.Forms" Version="1.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="$(MicrosoftExtensionsConfigurationPackageVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="$(MicrosoftExtensionsConfigurationPackageVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="$(MicrosoftExtensionsConfigurationPackageVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="$(MicrosoftExtensionsHostingPackageVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(MicrosoftExtensionsHostingAbstractionsPackageVersion)" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="$(MicrosoftIdentityClientPackageVersion)" />
+    <PackageReference Include="MultiColor.ProgressBar" Version="1.5.0" />
+    <PackageReference Include="ReactiveUI.Fody" Version="$(ReactiveUIPackageVersion)" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="$(ReactiveUIPackageVersion)" />
+    <PackageReference Include="ReactiveUI.Testing" Version="$(ReactiveUIPackageVersion)" />
+    <PackageReference Include="Xamarin.Essentials" Version="$(XamarinEssentialsPackageVersion)" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resx\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+	<InternalsVisibleTo Include="Custom.DatePickerTest.Android" />
+	<InternalsVisibleTo Include="Custom.DatePickerTest.iOS" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\TitleBar.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChargingSchedule\EditChargingScheduleView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ChargingSchedule\ListChargingScheduleView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="IDisposableAnalyzers" Version="3.4.2" />
+  </ItemGroup>
+</Project>

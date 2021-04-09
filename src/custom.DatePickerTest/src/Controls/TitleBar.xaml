@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<FlexLayout
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:svgimage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="Custom.DatePickerTest.Controls.TitleBar" 
+    Direction="Row" 
+    AlignItems="Center"
+    Margin="10,0"
+    FlexLayout.Basis="10%">
+    <svgimage:SvgCachedImage x:Name="BackButtonImage" HeightRequest="30" FlexLayout.Basis="15%" IsVisible="False"/>
+    <Label x:Name="BackButtonLabel" HeightRequest="30" FontSize="15" VerticalTextAlignment="Center" FlexLayout.Basis="15%" IsVisible="False"/>
+    <Label x:Name="TitleText" TextColor="{AppThemeBinding Light=Black, Dark=White}" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold" FlexLayout.Basis="70%"/>
+</FlexLayout>

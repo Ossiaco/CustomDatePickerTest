@@ -1,0 +1,33 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <AboveDirBuildProps>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))</AboveDirBuildProps>
+  </PropertyGroup>
+  <Import Project="$(AboveDirBuildProps)" Condition=" '$(AboveDirBuildProps)' != '' " />
+
+  <PropertyGroup>
+    <PackageTags></PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>Ossiaco(R) Chorus Platform</Product>
+    <ClientVersion>3.0.0</ClientVersion>
+    <CurrentDate>$([System.DateTime]::Now.ToString(yyyyMMdd))</CurrentDate>
+    <VersionSuffix Condition=" '$(IsNightly)' == 'true' ">nightly-$(CurrentDate)</VersionSuffix>
+    <VersionSuffix Condition=" '$(IsPreview)' == 'true' ">preview</VersionSuffix>
+    <Version Condition=" '$(VersionSuffix)' == '' ">$(ClientVersion)</Version>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(ClientVersion)-$(VersionSuffix)</Version>
+    <FileVersion>$(ClientVersion)</FileVersion>
+    <Authors>Ossiaco</Authors>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup Label="Code Analyzers">
+    <PackageReference Include="StyleCop.Analyzers" Version="$(StyleCopAnalyzersPackageVersion)" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="$(MicrosoftVisualStudioThreadingAnalyzersPackageVersion)" PrivateAssets="All" />
+    <PackageReference Include="IDisposableAnalyzers" Version="$(IDisposableAnalyzersPackageVersion)" PrivateAssets="All" />
+    <!--<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersPackageVersion)" PrivateAssets="All" />-->
+  </ItemGroup>
+
+
+</Project>

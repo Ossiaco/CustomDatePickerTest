@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0"
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <PreReleaseVersionLabel>prerelease</PreReleaseVersionLabel>
+  </PropertyGroup>
+
+  <PropertyGroup Label="AspNetCore Specific deppendencies">
+    <netcoreappVersion>netcoreapp3.1</netcoreappVersion>
+    <netstandardVersion>netstandard2.1</netstandardVersion>
+    <dotnetversion>net472</dotnetversion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="RestoreSources">
+    <RestoreSources>
+			$(RestoreSources);
+			https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json;
+			https://pkgs.dev.azure.com/ossiaco/ossiaco/_packaging/chorus_dev/nuget/v3/index.json;
+			https://pkgs.dev.azure.com/ossiaco/_packaging/chorusdev/nuget/v3/index.json;
+			https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json;
+			https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json;
+			https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json;
+			https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json;
+			https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json;
+			https://www.myget.org/F/applicationinsights/api/v3/index.json;
+			https://dotnet.myget.org/F/open-xml-sdk/api/v3/index.json;
+			https://www.myget.org/F/aad-clients-nightly/api/v3/index.json;
+			https://www.myget.org/F/abtsoftware/api/v3/index.json;
+    </RestoreSources>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Code Analyzers and Generators">
+    <CodeGenPackageVersionVersion>1.0.0-10325</CodeGenPackageVersionVersion>
+    <CodeGenBuildTimePackageVersionVersion>0.6.101-g1fea40ec38</CodeGenBuildTimePackageVersionVersion>
+    <MicrosoftCodeAnalysisFxCopAnalyzersPackageVersion>2.9.8</MicrosoftCodeAnalysisFxCopAnalyzersPackageVersion>
+    <InternalAspNetCoreAnalyzersPackageVersion>3.0.0-rc1.19456.10</InternalAspNetCoreAnalyzersPackageVersion>
+    <StyleCopAnalyzersPackageVersion>1.2.0-beta.205</StyleCopAnalyzersPackageVersion>
+    <MicrosoftVisualStudioThreadingAnalyzersPackageVersion>16.7.56</MicrosoftVisualStudioThreadingAnalyzersPackageVersion>
+    <IDisposableAnalyzersPackageVersion>3.4.1</IDisposableAnalyzersPackageVersion>
+    <MicrosoftAzureManagementFluentPackageVersion>1.22.2</MicrosoftAzureManagementFluentPackageVersion>
+    <SystemDiagnosticsPerformanceCounterPackageVersion>5.0.0-rc.1.20451.14</SystemDiagnosticsPerformanceCounterPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Service Fabric Dependencies">
+    <ApplicationInsightsVersion>2.15.0</ApplicationInsightsVersion>
+    <ApplicationInsightsPerfCounterCollectorPackageVersion>$(ApplicationInsightsVersion)</ApplicationInsightsPerfCounterCollectorPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Build Specific deppendencies">
+    <MicrosoftBuildPackageVersion>15.7.179</MicrosoftBuildPackageVersion>
+    <MicrosoftBuildFrameworkPackageVersion>15.7.179</MicrosoftBuildFrameworkPackageVersion>
+    <MicrosoftBuildTasksCorePackageVersion>15.7.179</MicrosoftBuildTasksCorePackageVersion>
+    <MicrosoftBuildUtilitiesCorePackageVersion>15.7.179</MicrosoftBuildUtilitiesCorePackageVersion>
+    <MicrosoftCodeAnalysisWorkspacesMSBuildPackageVersion>3.2.0-beta1-19227-04</MicrosoftCodeAnalysisWorkspacesMSBuildPackageVersion>
+    <MicrosoftCodeAnalysisPackageVersion>3.2.0-beta1-19227-04</MicrosoftCodeAnalysisPackageVersion>
+    <MicrosoftBuildLocatorPackageVersion>1.2.2</MicrosoftBuildLocatorPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="NetCore Specific dependencies">
+    <extensionsVersion>5.0.0</extensionsVersion>
+    <MicrosoftExtensionsConfigurationPackageVersion>$(extensionsVersion)</MicrosoftExtensionsConfigurationPackageVersion>
+    <MicrosoftExtensionsHostingPackageVersion>$(extensionsVersion)</MicrosoftExtensionsHostingPackageVersion>
+    <MicrosoftExtensionsHostingAbstractionsPackageVersion>$(extensionsVersion)</MicrosoftExtensionsHostingAbstractionsPackageVersion>
+    <SystemNumericsVectorsPackageVersion>4.5.0</SystemNumericsVectorsPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Auth and Security Specific Dependencies">
+    <MicrosoftIdentityClientPackageVersion>4.27.0</MicrosoftIdentityClientPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Testing Specific Dependencies">
+    <MoqPackageVersion>4.14.5</MoqPackageVersion>
+    <XunitPackageVersion>2.4.1</XunitPackageVersion>
+    <XunitAssertPackageVersion>2.4.1</XunitAssertPackageVersion>
+    <MicrosoftExtensionsLoggingTestingPackageVersion>3.0.0-rc2.19463.5</MicrosoftExtensionsLoggingTestingPackageVersion>
+    <XunitPriorityPackageVersion>1.1.6</XunitPriorityPackageVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Xamarin Dependencies">
+    <NewtonsoftJsonPackageVersion>12.0.3</NewtonsoftJsonPackageVersion>
+    <XamarinFormsPackageVersion>5.0.0.2012</XamarinFormsPackageVersion>
+    <XamarinPluginCurrentActivityPackageVersion>2.1.0.4</XamarinPluginCurrentActivityPackageVersion>
+    <XamarinEssentialsPackageVersion>1.6.1</XamarinEssentialsPackageVersion>
+    <XamarinAndroidSupportV7AppCombat>28.0.0.3</XamarinAndroidSupportV7AppCombat>
+    <XamarinFFImageLoadingSvgFormsVersion>2.4.11.982</XamarinFFImageLoadingSvgFormsVersion>
+    <ReactiveUIPackageVersion>13.2.2</ReactiveUIPackageVersion>
+  </PropertyGroup>
+
+</Project>

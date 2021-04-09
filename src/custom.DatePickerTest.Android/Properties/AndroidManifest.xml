@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.ossiaco.Custom.DatePickerTest.Droid" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+	<application android:label="Custom.DatePickerTest.Droid" android:theme="@style/MainTheme" android:icon="@mipmap/icon" android:roundIcon="@mipmap/icon_round">
+		<!--Intent filter to capture System Browser or Authenticator calling back to our app after sign-in-->
+		<activity android:name="microsoft.identity.client.BrowserTabActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="msauth" android:host="com.ossiaco.Custom.DatePickerTest.Droid" android:path="/VFjcPCDrK2geNBv/pw4ZrwcmxwA=" />
+			</intent-filter>
+		</activity>
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>
